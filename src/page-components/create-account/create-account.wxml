@@ -1,0 +1,6 @@
+<view wx:if="{{showMainPage}}">这是页面 create-account</view>
+
+<!-- 填写公司页 -->
+<view wx:if="{{showCompanyPage}}">
+  <include src="./templates/typing-company.wxml" />
+</view>

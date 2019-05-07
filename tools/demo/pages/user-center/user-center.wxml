@@ -1,0 +1,14 @@
+<comp
+  id="loginComp"
+  env="local"
+  logoutEmitter="{{logoutEmitter}}"
+  bind:logoutSuccess="logoutSuccess"
+  bind:logoutFail="logoutFail"
+  bind:loginSuccess="loginSuccess">
+
+  <text>pages/user-center/user-center.wxml</text>
+  <button bindtap="logoutButton"> 点击退出 </button>
+
+  <button bindtap="bindShowList">点击显示认证页</button>
+
+</comp>

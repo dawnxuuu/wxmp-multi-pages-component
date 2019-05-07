@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "b-wx-input": "../common/b-wx-input/b-wx-input"
+  }
+}

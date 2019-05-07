@@ -1,1 +1,9 @@
-<comp></comp>
+<comp
+  env="local"
+  navigationBarTitleText="宿主页面"
+  bind:loginSuccess="loginSuccess"
+>
+  <navigator url="/pages/user-center/user-center">
+    <text bindtap="">这是登录成功后页面主要内容</text>
+  </navigator>
+</comp>

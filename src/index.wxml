@@ -1,1 +1,56 @@
-<view class="index other">{{prop}}-{{flag}}</view>
+<view>
+  <main
+    id="main-comp"
+    wx:if="{{componentVisible.main}}"
+
+    env="{{env}}"
+    navigationBarTitleText="{{navigationBarTitleText}}"
+
+    bind:setComponentVisible="setComponentVisible"
+    
+    bind:mainLoginSuccess="mainLoginSuccess"
+    logoutEmitter="{{logoutEmitter}}"
+    bind:mainLogoutSuccess="mainLogoutSuccess"
+    bind:mainLogoutFail="mainLogoutFail">
+
+    <!-- 授权获取手机号以绑定C账号 -->
+    <view slot="bind-phone" wx:if="{{componentVisible.bindPhone}}">
+      <bind-phone></bind-phone>
+    </view>
+
+    <!-- 创建账号 -->
+    <view slot="create-account" wx:if="{{componentVisible.createAccount}}">
+      <create-account></create-account>
+    </view>
+
+    <!-- 绑定已有账号 -->
+    <view slot="bind-account" wx:if="{{componentVisible.bindAccount}}">
+      <bind-account></bind-account>
+    </view>
+
+    <!-- 认证列表页 -->
+    <view slot="certificate-list" wx:if="{{componentVisible.certificateList}}">
+      <certificate-list></certificate-list>
+    </view>
+
+    <!-- 个人认证页 -->
+    <view slot="personal-certificate" wx:if="{{componentVisible.personalCertificate}}">
+      <personal-certificate></personal-certificate>
+    </view>
+
+    <!-- 公司认证页 -->
+    <view slot="company-certificate" wx:if="{{componentVisible.companyCertificate}}">
+      <company-certificate></company-certificate>
+    </view>
+
+    <!-- 下载引导页 -->
+    <view slot="download-app" wx:if="{{componentVisible.downloadApp}}">
+      <download-app></download-app>
+    </view>
+  </main>
+
+  <!-- 宿主页面内容 -->
+  <block wx:if="{{componentVisible.hostPage}}">
+    <slot></slot>
+  </block>
+</view>

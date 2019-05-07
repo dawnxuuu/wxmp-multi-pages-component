@@ -1,4 +1,13 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "main": "./main/main",
+    "bind-phone": "./page-components/bind-phone/bind-phone",
+    "create-account": "./page-components/create-account/create-account",
+    "bind-account": "./page-components/bind-account/bind-account",
+    "certificate-list": "./page-components/certificate-list/certificate-list",
+    "personal-certificate": "./page-components/personal-certificate/personal-certificate",
+    "company-certificate": "./page-components/company-certificate/company-certificate",
+    "download-app": "./page-components/download-app/download-app"
+  }
 }

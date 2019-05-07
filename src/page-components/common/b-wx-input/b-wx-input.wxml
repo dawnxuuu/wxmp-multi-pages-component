@@ -1,0 +1,35 @@
+<view class="b-wx-input__wrapper">
+  <input
+    class="b-wx-input__inputting"
+    value="{{value}}"
+    type="{{type}}"
+    password="{{password}}"
+    placeholder="{{placeholder}}"
+    placeholder-class="input-placeholder"
+    disabled="{{disabled}}"
+    maxlength="{{maxlength}}"
+    cursor-spacing="{{cursor-spacing}}"
+    focus="{{focus}}"
+    confirm-type="{{confirm-type}}"
+    confirm-hold="{{confirm-hold}}"
+    adjust-position="{{adjust-position}}"
+    bindinput="bindInput"
+    bindfocus="bindFocus"
+    bindblur="bindBlur"
+    bindconfirm="bindConfirm" />
+
+  <image
+    class="b-wx-input__clear"
+    src="./images/clear.png"
+    hidden="{{!clearIcon}}"
+    bindtap="bindClearIconTap"
+    ></image>
+
+  <image
+    class="b-wx-input__password-switch"
+    mode="aspectFit"
+    src="{{passwordIconSrc}}"
+    hidden="{{!passwordIcon}}"
+    bindtap="bindPasswordIconTap"
+    ></image>
+</view>

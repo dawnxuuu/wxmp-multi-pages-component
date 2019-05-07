@@ -1,0 +1,9 @@
+<view>
+  <slot name="bind-phone"></slot>
+  <slot name="create-account"></slot>
+  <slot name="bind-account"></slot>
+  <slot name="certificate-list"></slot>
+  <slot name="personal-certificate"></slot>
+  <slot name="company-certificate"></slot>
+  <slot name="download-app"></slot>  
+</view>

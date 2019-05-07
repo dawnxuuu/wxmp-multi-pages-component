@@ -1,5 +1,4 @@
 {
-  "navigationBarTitleText": "示例",
   "usingComponents": {
     "comp": "../../components/index"
   }
