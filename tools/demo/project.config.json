@@ -12,9 +12,9 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.3",
+	"libVersion": "2.4.2",
 	"appid": "",
-	"projectname": "miniprogram-demo",
+	"projectname": "wxmp-multi-pages-component",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
