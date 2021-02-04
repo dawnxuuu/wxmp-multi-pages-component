@@ -4,6 +4,6 @@
   bind:loginSuccess="loginSuccess"
 >
   <navigator url="/pages/user-center/user-center">
-    <text bindtap="">这是登录成功后页面主要内容</text>
+    <text bindtap="">这是登录成功后，宿主页面的主要内容</text>
   </navigator>
 </comp>
