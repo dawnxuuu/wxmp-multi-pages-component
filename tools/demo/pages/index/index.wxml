@@ -6,7 +6,7 @@
   <view>这是登录成功后，首页主要内容</view>
 
   <navigator url="/pages/user-center/user-center">
-    <button>跳转到个人中心页</button>
+    <button>跳转到个人中心</button>
   </navigator>
 
 </comp>
