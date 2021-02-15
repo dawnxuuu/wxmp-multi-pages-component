@@ -1,17 +1,4 @@
-# miniprogram-custom-component
-
-小程序自定义组件开发模板：
-
-* 支持 less 编写 wxss
-* 使用 webpack 构建 js
-* 支持自定义组件单元测试
-* 支持 eslint
-* 支持多入口构建
-
-## 使用
-
-* 使用[命令行工具](https://github.com/wechat-miniprogram/miniprogram-cli)进行初始化
-* 直接从 github 上 clone 下来
+# 微信小程序多页面组件
 
 ## 开发
 
@@ -37,12 +24,6 @@ npm run watch
 
 3. 生成的 miniprogram\_dev 目录是一个小程序项目目录，以此目录作为小程序项目目录在开发者工具中打开即可查看自定义组件被使用的效果。
 
-4. 进阶：
-
-* 如果有额外的构建需求，可自行修改 tools 目录中的构建脚本。
-* 内置支持 less、sourcemap 等功能，默认关闭。如若需要可以自行修改 tools/config.js 配置文件中相关配置。
-* 内置支持多入口构建，如若需要可自行调整 tools/config.js 配置文件的 entry 字段。
-* 默认开启 eslint，可自行调整规则或在 tools/config.js 中注释掉 eslint-loader 行来关闭此功能。
 
 ## 发布
 
@@ -123,3 +104,92 @@ npm run clean
 ```
 npm run clean-dev
 ```
+
+# npm组件使用方法
+
+## 引入组件
+小程序工程中，package.json 文件中引入组件
+```
+{
+  "dependencies": {
+    "【npm包名】wxmp-login-register": "1.2.19"
+  }
+}
+```
+## 页面内容需作为slot放在登录组件标签内
+```
+<component-wx-login  env="local"  bind:loginSuccess="loginSuccess">
+  <view>页面内容</view>
+  <view>页面内容</view>
+</component-wx-login>
+```
+## 属性与方法
+### env
+* local 本地开发环境
+* pre 预上线环境
+* production 生产环境。默认。
+
+用以配置不同环境的接口地址。
+### navigationBarTitleText
+这里需要重复设置一下页面标题，没办法
+### bind:loginSuccess
+登录成功回调函数
+### bind:loginFail
+登录失败回调函数
+### logoutEmitter
+解绑退出触发器。默认必须是false，当设置为true时会触发解绑退出方法，在解绑退出成功回调中，需要将此属性重置为false，以便下次解绑退出时设置为true才生效。
+### bind:logoutSuccess
+解绑退出成功的回调函数
+### bind:logoutFail
+解绑退出成功的失败函数
+用户必须添加此回调，此回调函数中必须将 logoutEmitter 重置为false
+
+## 可通过 selectComponent() 直接调用的组件方法
+### showCertificateList
+显示认证列表页
+### executeLogin
+执行登录逻辑
+
+# 组件原理
+## 引入main组件的原因
+main组件与页面子组件可利用组件间关系releations，实现父子组件数据交互。
+否则的话，每个子组件都需要定义一堆属性以及触发一系列事件来实现与index父组件数据交互。
+而使用了组件间关系，只需要在组件加载时linked钩子上，将目标组件的实例挂载到当前组件上，即可轻松调用目标组件实例上全部数据和方法。
+main组件仅需要通过有限的几个属性和方法即可将主要数据传递给父组件index。父组件index将主要数据传递给业务调用方即可。
+```
+// index.wxml 中
+
+<main>
+  <bindAccount></bindAccount>
+  <createAccount></createAccount>
+</main>
+```
+
+## 全局唯一登录态
+多个页面引用组件时，只要有一个页面登录成功了，会在app实例中设置全局属性 app.loggedIn = true，此时其他页面的登录行为便不不再进行。
+
+## 全局状态
+
+### 存储在本地缓存中的，字段均以 login_开头，有如下：
+```   
+login_at    
+login_rt    
+login_deviceId
+login_fromUserCenterUnbind
+login_personal_info
+```
+
+### 存储在main组件中的值有如下：
+```      
+data.url.passport 等，存储不同环境的接口地址
+data.globalState.at    
+data.globalState.rt    
+data.globalState.deviceId    
+```
+
+### 存储在app实例对象上的有
+```
+app.loggedIn   是否已登录  Boolean
+app.certificate 认证相关
+```
+
