@@ -43,12 +43,12 @@ module.exports = Behavior({
 
       const barTitleMap = {
         hostPage: this.data.navigationBarTitleText,
-        bindPhone: this.data.navigationBarTitleText,
-        createAccount: 'createAccount',
-        bindAccount: 'bindAccount',
-        certificateList: 'certificateList',
-        personalCertificate: 'personalCertificate',
-        companyCertificate: 'companyCertificate',
+        bindPhone: '绑定手机号',
+        createAccount: '创建账号',
+        bindAccount: '绑定已有账号',
+        certificateList: '认证列表',
+        personalCertificate: '个人认证',
+        companyCertificate: '公司认证',
         downloadApp: '下载app'
       }
 
@@ -57,7 +57,7 @@ module.exports = Behavior({
         title: barTitleMap[page]
       })
 
-      // 将控制组件页显示的属性传给index
+      // 将控制组件页显示的属性传给index页面
       this.triggerEvent('setComponentVisible', {value: this.data.componentVisible})
     }
   }

@@ -87,6 +87,15 @@ Component({
       unlinked(target) {
         console.log('=xu=[主main][子company-certificate][unlinked]', target)
       }
+    },
+    '../page-components/download-app/download-app': {
+      type: 'descendant',
+      linked(target) {
+        console.log('=xu=[主main][子download-app][linked]', target)
+      },
+      unlinked(target) {
+        console.log('=xu=[主main][子download-app][unlinked]', target)
+      }
     }
   },
 

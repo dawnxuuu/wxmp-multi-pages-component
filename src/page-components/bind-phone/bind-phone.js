@@ -10,5 +10,11 @@ Component({
         console.log('=xu=[在bind-phone][父main][unlinked]', target)
       }
     }
-  }
+  },
+
+  methods: {
+    navigateToNext() {
+      this.data._main.showComponentPage('createAccount')
+    }
+  },
 })

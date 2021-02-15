@@ -1,1 +1,2 @@
 <view>这是页面 download-app</view>
+<button bindtap="navigateToNext">注册登录成功，可自动跳转至宿主页面，点我也可以</button>

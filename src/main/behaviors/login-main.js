@@ -10,7 +10,8 @@ module.exports = Behavior({
         success(res) {
           if (res.code) {
             console.log('=xu= code', res.code)
-            that.loginSuccess({data: '成功'})
+            // that.loginSuccess({data: '成功'})
+            that.showComponentPage('bindPhone')
           } else {
             that.mainErrorModal({netError: true})
           }

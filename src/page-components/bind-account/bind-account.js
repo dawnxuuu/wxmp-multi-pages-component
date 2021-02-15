@@ -12,5 +12,10 @@ Component({
         console.log('=xu=[在bind-account][父main][unlinked]', target)
       }
     }
-  }
+  },
+  methods: {
+    navigateToNext() {
+      this.data._main.showComponentPage('certificateList')
+    }
+  },
 })

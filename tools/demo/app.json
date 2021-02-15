@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/user-center/user-center"
+    "pages/user-center/user-center",
+    "pages/logged-out/logged-out"
   ],
   "window":{
     "backgroundTextStyle":"light",

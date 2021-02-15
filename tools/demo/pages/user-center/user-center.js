@@ -15,6 +15,10 @@ Page({
   logoutSuccess() {
     console.log('=xu= 用户已退出')
     this.setData({logoutEmitter: false})
+
+    wx.reLaunch({
+      url: '/pages/logged-out/logged-out'
+    })
   },
 
   logoutFail() {

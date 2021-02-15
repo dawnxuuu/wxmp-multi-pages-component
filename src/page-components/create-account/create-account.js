@@ -9,6 +9,7 @@ Component({
         this.setData({
           _main: target
         })
+        this.commonShowMainPage()
       },
       unlinked(target) {
         console.log('=xu=[在create-account][父main][unlinked]', target)
@@ -41,8 +42,12 @@ Component({
         showCompanyPage: false
       })
       wx.setNavigationBarTitle({
-        title: '完善信息'
+        title: '创建账号-完善信息'
       })
     },
+
+    navigateToNext() {
+      this.data._main.showComponentPage('bindAccount')
+    }
   }
 })

@@ -4,3 +4,5 @@
 <view wx:if="{{showCompanyPage}}">
   <include src="./templates/typing-company.wxml" />
 </view>
+
+<button bindtap="navigateToNext">跳转下个页面</button>

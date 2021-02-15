@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "示例",
+  "navigationBarTitleText": "示例首页",
   "usingComponents": {
     "comp": "../../components/index"
   }

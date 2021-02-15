@@ -1,0 +1,2 @@
+<view>您已经退出登录，若要继续使用请登录。</view>
+<button bindtap="navigateToHome">跳转到首页</button>

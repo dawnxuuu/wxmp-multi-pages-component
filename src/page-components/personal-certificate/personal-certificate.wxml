@@ -1,1 +1,2 @@
 <view>这是页面 personal-certificate</view>
+<button bindtap="navigateToNext">跳转下个页面</button>

@@ -14,5 +14,11 @@ Component({
         console.log('=xu=[在personal-certificate][父main][unlinked]', target)
       }
     }
-  }
+  },
+
+  methods: {
+    navigateToNext() {
+      this.data._main.showComponentPage('companyCertificate')
+    }
+  },
 })
